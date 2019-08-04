@@ -1,0 +1,40 @@
+---
+title: "My Assignment"
+author: "Khalid Saeed"
+date: "8/3/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+## knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+This project was created as part of the Developing Data Products course of the Coursera [Data Science Specialisation]
+
+## Map of Oil-Filed for Saudi Aramco
+
+The following map represents passenger traffic on the Paris RATP railway network in 2015. Clicking on a station shows the total number of passengers that entered the station during that year.
+
+```{r prerequisites}
+rm(list=ls())
+library(leaflet)
+library(jsonlite)
+library(dplyr)
+library(stringr)
+```
+
+## Summary of Aramco and some oil fields and chemicals
+
+```{r Dammam, echo = TRUE}
+  leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat= 26.487444,lng= 50.119097, popup="Front Sea Corniche") %>%
+  addMarkers(lat= 26.290139,lng= 50.106587, popup="Saudi Aramco HQ (Biggest Oil Company)") %>%
+  addMarkers(lat= 26.335803,lng= 50.120909, popup="Ithraa Musem (Oil History Musem)") %>%
+  addMarkers(lat= 26.325951,lng= 50.137437, popup="King Fahad of Petroleum and Minerals University") %>%
+  addMarkers(lat= 26.697720,lng= 50.095779, popup="Ras Tanura Oilfield (Largest Oil-filed)") %>%
+  addMarkers(lat= 27.038072,lng= 49.558269, popup="SABIC (Petrochemical Projects)") #%>%
+    
+```
